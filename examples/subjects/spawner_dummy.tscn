@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://examples/subjects/spawner_dummy.gd" type="Script" id=1]
+[ext_resource path="res://defaults/icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/gadgets/spawner/spawner_2d.gd" type="Script" id=3]
+[ext_resource path="res://addons/sequencers/bool/toggle_sequencer.gd" type="Script" id=4]
+[ext_resource path="res://examples/subjects/spawnable_dummy.tscn" type="PackedScene" id=5]
+
+[node name="SpawnerDummy" type="Node2D"]
+position = Vector2( 521, 324 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ToggleSequencer" type="Node" parent="."]
+script = ExtResource( 4 )
+time_between_toggles = 5.0
+auto_start = true
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="Spawner2D" type="Node2D" parent="Sprite"]
+script = ExtResource( 3 )
+scene_to_spawn = ExtResource( 5 )
+
+[node name="SpawnParent" type="Node2D" parent="."]
