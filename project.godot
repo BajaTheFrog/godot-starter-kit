@@ -199,6 +199,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/transformers/rotation/spinner.gd"
 }, {
+"base": "Node",
+"class": "State",
+"language": "GDScript",
+"path": "res://addons/states/state.gd"
+}, {
+"base": "Node",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://addons/states/state_machine.gd"
+}, {
 "base": "BoolSequencer",
 "class": "ToggleSequencer",
 "language": "GDScript",
@@ -283,6 +293,8 @@ _global_script_class_icons={
 "SpeedCalculator": "",
 "SpinStopCalculator": "",
 "Spinner": "",
+"State": "",
+"StateMachine": "",
 "ToggleSequencer": "",
 "TweenFeedback": "",
 "TweenFeedback2D": "",
