@@ -7,6 +7,7 @@ export (NodePath) var target_path
 export (SpinDirection) var spin_direction
 export (bool) var spin_forever = true
 export (NodePath) var stop_calculator
+export (int) var base_speed = 5
 
 var is_spinning = false
 
@@ -37,7 +38,7 @@ func _process(delta):
 		return
 		
 	var current_rotation = target.rotation_degrees
-	var rot_speed = rad2deg(5)
+	var rot_speed = rad2deg(base_speed)
 	var new_rotation_delta = rot_speed * delta if is_spinning else 0
 	
 	if is_spinning:

@@ -214,6 +214,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/sequencers/bool/toggle_sequencer.gd"
 }, {
+"base": "Reference",
+"class": "TreeTools",
+"language": "GDScript",
+"path": "res://addons/utlities/tree_tools.gd"
+}, {
 "base": "BaseFeedback",
 "class": "TweenFeedback",
 "language": "GDScript",
@@ -296,6 +301,7 @@ _global_script_class_icons={
 "State": "",
 "StateMachine": "",
 "ToggleSequencer": "",
+"TreeTools": "",
 "TweenFeedback": "",
 "TweenFeedback2D": "",
 "UI": "",

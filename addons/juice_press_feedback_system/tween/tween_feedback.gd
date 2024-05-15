@@ -79,3 +79,4 @@ func _execute(target: Node):
 
 func _on_tween_finished(_object: Object, _key: NodePath):
 	in_progress = false 
+	trigger_feedback_ended()

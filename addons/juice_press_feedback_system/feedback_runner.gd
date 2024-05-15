@@ -2,6 +2,8 @@ tool
 extends Node
 class_name FeedbackRunner
 
+signal all_feedbacks_finished()
+
 export (bool) var run = false setget _editor_execute
 export (bool) var is_debug_trigger_enabled = true
 export (bool) var run_trigger_in_editor = false
@@ -29,4 +31,13 @@ func execute_feedbacks():
 	for child in get_children():
 		var child_feedback := child as BaseFeedback
 		if child_feedback:
+			
+			if child_feedback.dont_run:
+				continue
+			
 			child_feedback.execute()
+			
+			if child_feedback.block_until_done:
+				yield(child_feedback, "feedback_ended")
+				
+	emit_signal("all_feedbacks_finished")

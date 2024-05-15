@@ -4,10 +4,15 @@ class_name MovementComponent2D
 # Movment math inspired by
 # https://github.com/ShatReal/Game-Jam-Template-4/blob/master/scenes/players/player_top_down.gd
 
+enum CollisionType { COLLIDE, SLIDE }
+
 signal velocity_changed(velocity)
 
+export (CollisionType) var collision_type = CollisionType.COLLIDE
+export (float) var gravity = 0.0
 export (NodePath) var speed_calculator_path
 export (NodePath) var direction_calculator_path
+export (bool) var is_enabled = true
 
 func _speed_calculator() -> Node:
 	return get_node(speed_calculator_path)
@@ -21,12 +26,25 @@ onready var velocity = Vector2.ZERO
 
 var target: KinematicBody2D = null
 
-
 func reset():
 	hard_stop()
+	
+
+func _process(delta):
+	if is_enabled:
+		_on_process(delta)
+		
+		
+func _on_process(delta):
+	pass
 
 
 func _physics_process(delta):
+	if is_enabled:
+		_on_physics_process(delta)
+
+
+func _on_physics_process(delta):
 	if not target:
 		return
 
@@ -49,8 +67,16 @@ func _physics_process(delta):
 		
 	else:
 		velocity = next_direction * top_speed
-
-	var collision_info = target.move_and_collide(velocity * delta)
+	
+	velocity.y += gravity * delta
+	
+	match collision_type:
+		CollisionType.COLLIDE:
+			var collision_info = target.move_and_collide(velocity * delta)
+		CollisionType.SLIDE:
+			velocity = target.move_and_slide(velocity, Vector2(0, -1))
+	
+	_set_velocity(velocity)
 
 
 func hard_stop():

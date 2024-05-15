@@ -6,6 +6,7 @@ export(MovementFreedom) var movement_freedom
 
 export (bool) var maintain_last_direction = false
 export (bool) var has_instant_direction_change = true
+export (Array) var direction_blacklist = []
 
 onready var last_direction = Vector2.ZERO
 
@@ -26,13 +27,13 @@ func _process(delta):
 	
 	
 func _four_way_vector() -> Vector2:
-	if Input.is_action_pressed("standard_move_up"):
+	if Input.is_action_pressed("standard_move_up") and not "standard_move_up" in direction_blacklist:
 		return Vector2.UP
-	elif Input.is_action_pressed("standard_move_left"):
+	elif Input.is_action_pressed("standard_move_left") and not "standard_move_left" in direction_blacklist:
 		return Vector2.LEFT
-	elif Input.is_action_pressed("standard_move_down"):
+	elif Input.is_action_pressed("standard_move_down") and not "standard_move_down" in direction_blacklist:
 		return Vector2.DOWN
-	elif Input.is_action_pressed("standard_move_right"):
+	elif Input.is_action_pressed("standard_move_right") and not "standard_move_right" in direction_blacklist:
 		return Vector2.RIGHT
 	else:
 		return last_direction if maintain_last_direction else Vector2.ZERO 

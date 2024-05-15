@@ -5,7 +5,7 @@ class_name UIPresentationService
 var root_control: Control
 var ui_stack = []
 
-func set_root_control(given_control: Control):
+func set_presentation_root(given_control: Control):
 	root_control = given_control
 	print("Root control is now: " + str(given_control))
 
