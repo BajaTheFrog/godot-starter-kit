@@ -99,6 +99,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/sequencers/float/float_sequencer.gd"
 }, {
+"base": "Node",
+"class": "GameService",
+"language": "GDScript",
+"path": "res://game/services/game_service.gd"
+}, {
 "base": "ClickableSprite",
 "class": "GreenSprite",
 "language": "GDScript",
@@ -118,6 +123,11 @@ _global_script_classes=[ {
 "class": "LookAt",
 "language": "GDScript",
 "path": "res://addons/look_at/look_at.gd"
+}, {
+"base": "Node",
+"class": "Main",
+"language": "GDScript",
+"path": "res://game/MAIN.gd"
 }, {
 "base": "Node",
 "class": "MouseListener",
@@ -278,10 +288,12 @@ _global_script_class_icons={
 "EventSubscription": "",
 "FeedbackRunner": "",
 "FloatSequencer": "",
+"GameService": "",
 "GreenSprite": "",
 "InlineTimer": "",
 "IntSequencer": "",
 "LookAt": "",
+"Main": "",
 "MouseListener": "",
 "MovementComponent2D": "",
 "Normalizer": "",
@@ -315,13 +327,14 @@ _global_script_class_icons={
 [application]
 
 config/name="Starter Kit"
-run/main_scene="res://examples/samples.tscn"
+run/main_scene="res://game/MAIN.tscn"
 config/icon="res://defaults/icon.png"
 
 [autoload]
 
 EventBus="*res://addons/event_bus/event_bus.tscn"
 PresentationServices="*res://addons/presentation/presentation_services.tscn"
+GAME="*res://game/GAME.tscn"
 
 [editor_plugins]
 
