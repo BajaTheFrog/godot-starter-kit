@@ -18,12 +18,12 @@ texture = ExtResource( 1 )
 
 [node name="XSequencer" type="Node" parent="."]
 script = ExtResource( 2 )
-amplitude = 75.0
-period = 3.0
-horizontal_shift = 0.3
+min_value = -100.0
+max_value = 150.0
+min_to_max_time = 1.3
 
 [node name="YSequencer" type="Node" parent="."]
 script = ExtResource( 2 )
-wave_type = 1
-amplitude = 75.0
-period = 3.0
+min_value = -150.0
+max_value = 50.0
+min_to_max_time = 0.7
