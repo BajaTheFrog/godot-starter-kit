@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://addons/third_party/shaders/single_color_shader_material.tres" type="Material" id=1]
+[ext_resource path="res://addons/first_party/components/flashers/flasher.gd" type="Script" id=2]
+[ext_resource path="res://defaults/icon.png" type="Texture" id=3]
+[ext_resource path="res://addons/first_party/components/flashers/fixed_count_flasher.gd" type="Script" id=4]
+[ext_resource path="res://addons/third_party/shaders/single_color_shader.gdshader" type="Shader" id=5]
+[ext_resource path="res://addons/first_party/components/flashers/fixed_time_flasher.gd" type="Script" id=6]
+[ext_resource path="res://addons/first_party/components/flashers/hit_flash.gd" type="Script" id=7]
+
+[sub_resource type="ShaderMaterial" id=1]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/active = true
+shader_param/color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+resource_local_to_scene = true
+shader = ExtResource( 5 )
+shader_param/active = true
+shader_param/color = Color( 0.780392, 1, 0, 1 )
+
+[node name="FlashTest" type="Node2D"]
+
+[node name="color" type="Sprite" parent="."]
+position = Vector2( 363, 289 )
+texture = ExtResource( 3 )
+
+[node name="flasher" type="Node" parent="color"]
+script = ExtResource( 2 )
+target_path = NodePath("..")
+flash_color = Color( 1, 0, 0, 1 )
+time_between_toggles = 0.3
+auto_start = true
+
+[node name="material" type="Sprite" parent="."]
+position = Vector2( 643, 286 )
+texture = ExtResource( 3 )
+
+[node name="flasher" type="Node" parent="material"]
+script = ExtResource( 2 )
+target_path = NodePath("..")
+flash_color = Color( 1, 1, 1, 1 )
+flash_material = SubResource( 1 )
+time_between_toggles = 0.1
+auto_start = true
+
+[node name="fixed_count" type="Sprite" parent="."]
+position = Vector2( 344, 421 )
+texture = ExtResource( 3 )
+
+[node name="flasher" type="Node" parent="fixed_count"]
+script = ExtResource( 4 )
+target_path = NodePath("..")
+flash_color = Color( 0.780392, 1, 0, 1 )
+flash_material = SubResource( 2 )
+time_between_toggles = 0.2
+auto_start = true
+number_of_flashes = 3
+
+[node name="fixed_time" type="Sprite" parent="."]
+position = Vector2( 676, 419 )
+texture = ExtResource( 3 )
+
+[node name="flasher" type="Node" parent="fixed_time"]
+script = ExtResource( 6 )
+target_path = NodePath("..")
+flash_color = Color( 1, 0.654902, 0.0627451, 1 )
+flash_material = ExtResource( 1 )
+time_between_toggles = 0.1
+auto_start = true
+duration_of_flashes = 5.0
+
+[node name="hit_flash" type="Sprite" parent="."]
+position = Vector2( 519, 495 )
+texture = ExtResource( 3 )
+
+[node name="hit_flasher" type="Node" parent="hit_flash"]
+script = ExtResource( 7 )
+target_path = NodePath("..")
+flash_color = Color( 0.917647, 0.180392, 1, 1 )
+flash_duration = 4.0
+auto_start = true
