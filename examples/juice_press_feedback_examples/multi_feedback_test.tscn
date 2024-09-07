@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://addons/juice_press_feedback_system/feedback_runner.gd" type="Script" id=1]
+[ext_resource path="res://addons/first_party/juice_press_feedback_system/feedback_runner.gd" type="Script" id=1]
 [ext_resource path="res://examples/subjects/test_dummy_base.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/juice_press_feedback_system/transform/scale_feedback_2d.gd" type="Script" id=3]
-[ext_resource path="res://addons/juice_press_feedback_system/rendering/color_feedback_2d.gd" type="Script" id=4]
-[ext_resource path="res://addons/juice_press_feedback_system/transform/rotate_feedback_2d.gd" type="Script" id=5]
-[ext_resource path="res://addons/basic_2d_assets/shapes/spiral/spiral-filled.png" type="Texture" id=6]
+[ext_resource path="res://addons/first_party/juice_press_feedback_system/transform/scale_feedback_2d.gd" type="Script" id=3]
+[ext_resource path="res://addons/first_party/juice_press_feedback_system/rendering/color_feedback_2d.gd" type="Script" id=4]
+[ext_resource path="res://addons/first_party/juice_press_feedback_system/transform/rotate_feedback_2d.gd" type="Script" id=5]
+[ext_resource path="res://addons/first_party/assets/basic_2d_assets/shapes/spiral/spiral-filled.png" type="Texture" id=6]
 
 [node name="MultiFeedbackTest" instance=ExtResource( 2 )]
 position = Vector2( 504, 290 )

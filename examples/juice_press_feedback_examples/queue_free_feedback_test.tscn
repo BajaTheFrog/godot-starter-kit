@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://examples/juice_press_feedback_examples/queue_free_feedback_test.gd" type="Script" id=1]
-[ext_resource path="res://addons/gadgets/spawner/spawner_2d.gd" type="Script" id=2]
+[ext_resource path="res://addons/first_party/components/spawning/spawner/spawner_2d.gd" type="Script" id=2]
 [ext_resource path="res://examples/subjects/queue_free_dummy.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]

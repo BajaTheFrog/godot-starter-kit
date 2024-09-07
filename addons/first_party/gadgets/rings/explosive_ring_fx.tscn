@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/growable_ring.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/explosive_ring_fx.gd" type="Script" id=2]
+
+[node name="ExplosiveRingFX" type="Node2D"]
+script = ExtResource( 2 )
+explosion_size = 15.0
+explosion_duration = 0.75
+
+[node name="GrowableRing" parent="." instance=ExtResource( 1 )]

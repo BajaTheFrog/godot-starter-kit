@@ -4,7 +4,7 @@
 [ext_resource path="res://examples/event_bus_examples/rgb_buddies/red_sprite.gd" type="Script" id=2]
 [ext_resource path="res://examples/event_bus_examples/rgb_buddies/green_sprite.gd" type="Script" id=3]
 [ext_resource path="res://examples/event_bus_examples/rgb_buddies/blue_sprite.gd" type="Script" id=4]
-[ext_resource path="res://addons/clickable_area_2d/clickable_sprite.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/first_party/clickable_area_2d/clickable_sprite.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 50, 50 )

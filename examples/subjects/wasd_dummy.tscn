@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://defaults/icon.png" type="Texture" id=1]
-[ext_resource path="res://addons/components/movement/movement_component_2d.gd" type="Script" id=2]
-[ext_resource path="res://addons/components/movement/speed/speed_calculator.gd" type="Script" id=3]
-[ext_resource path="res://addons/components/movement/direction/wasd_direction_calculator_2d.gd" type="Script" id=4]
+[ext_resource path="res://addons/first_party/components/movement/movement_2d.gd" type="Script" id=2]
+[ext_resource path="res://addons/first_party/components/movement/speed/speed_calculator.gd" type="Script" id=3]
+[ext_resource path="res://addons/first_party/components/movement/direction/wasd_direction_calculator_2d.gd" type="Script" id=4]
 [ext_resource path="res://examples/subjects/wasd_dummy.gd" type="Script" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -18,6 +18,7 @@ __meta__ = {
 
 [node name="MovementComponent2D" type="Node" parent="."]
 script = ExtResource( 2 )
+target_path = NodePath("..")
 speed_calculator_path = NodePath("Speed")
 direction_calculator_path = NodePath("Direction")
 

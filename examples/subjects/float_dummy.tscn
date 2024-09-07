@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://addons/basic_2d_assets/objects/gem/gem_filled.png" type="Texture" id=1]
-[ext_resource path="res://addons/sequencers/float/wave_sequencer.gd" type="Script" id=2]
+[ext_resource path="res://addons/first_party/assets/basic_2d_assets/objects/gem/gem_filled.png" type="Texture" id=1]
+[ext_resource path="res://addons/first_party/sequencers/float/wave_sequencer.gd" type="Script" id=2]
 [ext_resource path="res://examples/subjects/float_dummy.gd" type="Script" id=3]
 
 [node name="FloatDummy" type="Node2D"]

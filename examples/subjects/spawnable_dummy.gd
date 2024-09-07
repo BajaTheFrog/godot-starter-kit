@@ -12,6 +12,5 @@ func set_with_transforms(new_position: Vector2, new_scale: Vector2, new_rotation
 	tween.tween_property(self, "rotation_degrees", new_rotation_degrees, 0.2).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_BACK)
 	tween.play()
 	
-	var timer_pair = InlineTimer.wait(self, life_time)
-	yield(timer_pair.timer, timer_pair.timeout)
+	yield(Wait.on(self, life_time), Wait.END)
 	call_deferred("queue_free")

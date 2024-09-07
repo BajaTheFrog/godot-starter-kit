@@ -2,8 +2,8 @@
 
 [ext_resource path="res://examples/subjects/spawner_dummy.gd" type="Script" id=1]
 [ext_resource path="res://defaults/icon.png" type="Texture" id=2]
-[ext_resource path="res://addons/gadgets/spawner/spawner_2d.gd" type="Script" id=3]
-[ext_resource path="res://addons/sequencers/bool/toggle_sequencer.gd" type="Script" id=4]
+[ext_resource path="res://addons/first_party/components/spawning/spawner/spawner_2d.gd" type="Script" id=3]
+[ext_resource path="res://addons/first_party/sequencers/bool/toggle_sequencer.gd" type="Script" id=4]
 [ext_resource path="res://examples/subjects/spawnable_dummy.tscn" type="PackedScene" id=5]
 
 [node name="SpawnerDummy" type="Node2D"]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://examples/subjects/queue_free_dummy.gd" type="Script" id=1]
-[ext_resource path="res://addons/basic_2d_assets/shapes/blob/blob_filled.png" type="Texture" id=2]
-[ext_resource path="res://addons/juice_press_feedback_system/feedback_runner.gd" type="Script" id=3]
-[ext_resource path="res://addons/sequencers/bool/toggle_sequencer.gd" type="Script" id=4]
-[ext_resource path="res://addons/juice_press_feedback_system/rendering/color_feedback_2d.gd" type="Script" id=5]
-[ext_resource path="res://addons/juice_press_feedback_system/node/queue_free_feedback.gd" type="Script" id=6]
+[ext_resource path="res://addons/first_party/assets/basic_2d_assets/shapes/blob/blob_filled.png" type="Texture" id=2]
+[ext_resource path="res://addons/first_party/juice_press_feedback_system/feedback_runner.gd" type="Script" id=3]
+[ext_resource path="res://addons/first_party/sequencers/bool/toggle_sequencer.gd" type="Script" id=4]
+[ext_resource path="res://addons/first_party/juice_press_feedback_system/rendering/color_feedback_2d.gd" type="Script" id=5]
+[ext_resource path="res://addons/first_party/juice_press_feedback_system/node/queue_free_feedback.gd" type="Script" id=6]
 
 [node name="QueueFreeDummy" type="Node2D"]
 position = Vector2( 534, 303 )

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://addons/look_at/look_at.gd" type="Script" id=1]
-[ext_resource path="res://addons/basic_2d_assets/shapes/arrow/arrow_filled.png" type="Texture" id=2]
-[ext_resource path="res://addons/basic_2d_assets/shapes/arrow/arrow_regular.png" type="Texture" id=3]
+[ext_resource path="res://addons/first_party/look_at/look_at.gd" type="Script" id=1]
+[ext_resource path="res://addons/first_party/assets/basic_2d_assets/shapes/arrow/arrow_filled.png" type="Texture" id=2]
+[ext_resource path="res://addons/first_party/assets/basic_2d_assets/shapes/arrow/arrow_regular.png" type="Texture" id=3]
 [ext_resource path="res://examples/mouse_node_examples/look_at/moving_ball.gd" type="Script" id=4]
-[ext_resource path="res://addons/basic_2d_assets/polygons/circle/circle_filled.png" type="Texture" id=5]
+[ext_resource path="res://addons/first_party/assets/basic_2d_assets/polygons/circle/circle_filled.png" type="Texture" id=5]
 
 [node name="LookAtTest" type="Node"]
 

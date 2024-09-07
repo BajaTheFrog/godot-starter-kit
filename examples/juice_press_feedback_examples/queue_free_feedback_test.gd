@@ -11,6 +11,5 @@ func _on_Spawner2D_node_spawned(spawned_node):
 
 
 func _on_node_exiting_tree():
-	var inline_timer = InlineTimer.wait(self, 1)
-	yield(inline_timer.timer, inline_timer.timeout)
+	yield(Wait.on(self, 1.0), Wait.END)
 	spawner_2D.spawn()

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://addons/juice_press_feedback_system/feedback_runner.gd" type="Script" id=1]
-[ext_resource path="res://addons/juice_press_feedback_system/transform/scale_feedback_2d.gd" type="Script" id=2]
+[ext_resource path="res://addons/first_party/juice_press_feedback_system/feedback_runner.gd" type="Script" id=1]
+[ext_resource path="res://addons/first_party/juice_press_feedback_system/transform/scale_feedback_2d.gd" type="Script" id=2]
 [ext_resource path="res://defaults/icon.png" type="Texture" id=3]
 [ext_resource path="res://examples/juice_press_feedback_examples/scale_feedback_test.gd" type="Script" id=4]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://addons/fonts/boldstrom_d.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://addons/first_party/assets/fonts/boldstrom_d.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://examples/presentation_examples/presentation_test_title_scene.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
