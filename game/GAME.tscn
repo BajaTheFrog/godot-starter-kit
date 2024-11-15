@@ -15,7 +15,7 @@
 [ext_resource type="Script" path="res://game/services/theme_service.gd" id="13"]
 [ext_resource type="Script" path="res://addons/presentation/contexts/context_service.gd" id="14"]
 
-[node name="Game" type="Node" node_paths=PackedStringArray("groups", "events", "messages", "theme_service", "sound_service", "pause_service", "time_service", "screen_service", "camera_service", "world_service", "entity_service", "ui_service", "context_service")]
+[node name="game" type="Node" node_paths=PackedStringArray("groups", "events", "messages", "theme_service", "sound_service", "pause_service", "time_service", "screen_service", "camera_service", "world_service", "entity_service", "ui_service", "context_service")]
 script = ExtResource("1")
 groups = NodePath("groups")
 events = NodePath("events")

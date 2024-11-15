@@ -60,7 +60,7 @@ func _private_spawn():
 		printerr(self.name + ": CANNOT SPAWN WITHOUT A PARENT")
 		return
 	
-	var scene_instance = scene_to_spawn.instance()
+	var scene_instance = scene_to_spawn.instantiate()
 	scene_instance.global_position = spawn_position
 	scene_instance.global_scale = spawn_scale
 	scene_instance.global_rotation_degrees = spawn_rotation_degrees

@@ -6,8 +6,6 @@ class_name StateMachine
 # Emitted when transitioning to a new state.
 signal transitioned_to(state_name: String, from_state_name: String, data: Dictionary)
 
-@export var state_properties: Dictionary
-
 # Path to the initial active state. We export it to be able to pick the initial state in the inspector.
 @export var initial_state : Node
 @export var enter_initial_state_on_ready: bool
@@ -72,15 +70,6 @@ func transition_to(target_state_id: String, properties: Dictionary = {}) -> void
 		
 	state.exit(target_state_id)
 	state = state_map[target_state_id]
-	
-	for key in state_properties:
-		if not properties.has(key):
-			var value = state_properties[key]
-			
-			if value is NodePath:
-				value = get_node(value)
-			
-			properties[key] = value
 	
 	state.state_machine = self
 	state.enter(previous_state_id, properties)

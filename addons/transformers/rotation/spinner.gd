@@ -1,23 +1,16 @@
 extends Component
 class_name Spinner
+# Spinner
+# Logic for just making a target node spin indefinitely
 
 enum SpinDirection { CLOCKWISE, COUNTER_CLOCKWISE }
 
-@export var target_path: NodePath
+@export var target: Node2D
 @export var spin_direction: SpinDirection
-@export var spin_forever: bool = true
 @export var rotations_per_second: float = 1
-
-
-func _get_target():
-	if not target_path:
-		return null
-		
-	return get_node(target_path)
 	
 	
-func _component_process(delta):	
-	var target = _get_target()
+func _component_process(delta):
 	if not target:
 		return
 		

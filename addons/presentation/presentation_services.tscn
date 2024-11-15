@@ -1,14 +1,31 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://n3ce576dd0qu"]
 
 [ext_resource type="Script" path="res://addons/presentation/ui/ui_presentation_service.gd" id="1"]
-[ext_resource type="Script" path="res://addons/presentation/presentation_services.gd" id="2"]
 [ext_resource type="Script" path="res://addons/presentation/contexts/context_service.gd" id="3"]
 
+[sub_resource type="GDScript" id="GDScript_5t0uf"]
+script/source = "extends Node
+# class_name PresentationServices
+# Holds onto services that handle the following
+# - transitioning between contexts
+# - presenting and handling UI 
+
+@onready var context_service_instance = $ContextService
+@onready var ui_service_instance = $UIService
+
+func context_service() -> ContextPresentationService:
+	return context_service_instance
+	
+
+func ui_service() -> UIPresentationService:
+	return ui_service_instance
+"
+
 [node name="PresentationServices" type="Node"]
-script = ExtResource( 2 )
+script = SubResource("GDScript_5t0uf")
 
 [node name="ContextService" type="Node" parent="."]
-script = ExtResource( 3 )
+script = ExtResource("3")
 
 [node name="UIService" type="Node" parent="."]
-script = ExtResource( 1 )
+script = ExtResource("1")

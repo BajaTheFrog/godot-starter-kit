@@ -37,23 +37,23 @@ func go_to(context_key, is_deferred: bool = true):
 	transition_to_context(context_scene, is_deferred)
 		
 		
-func transition_to_context(context_scene: Resource, is_deferred: bool):
+func transition_to_context(context_scene: PackedScene, is_deferred: bool):
 	if is_deferred:
 		call_deferred("_transition_to_context", context_scene)
 	else:
 		_transition_to_context(context_scene)
 	
 
-func _transition_to_context(context_scene: Resource):
+func _transition_to_context(context_scene: PackedScene):
 	clear_current_context()
 	_instance_and_add_context(context_scene)
 	
 	
-func _instance_and_add_context(context_scene: Resource):
+func _instance_and_add_context(context_scene: PackedScene):
 	if get_context_root_controller() == null or context_scene == null:
 		return
 	
-	var context_instance = context_scene.instance()
+	var context_instance = context_scene.instantiate()
 	context_instance.on_set_up()
 	context_root.add_child(context_instance)
 	context_instance = context_instance as Context

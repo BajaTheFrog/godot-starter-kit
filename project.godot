@@ -24,6 +24,11 @@ Game="*res://game/game.tscn"
 gdscript/warnings/unused_parameter=0
 gdscript/warnings/unused_signal=0
 
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+
 [editor_plugins]
 
 enabled=PackedStringArray()

@@ -1,14 +1,15 @@
 extends BoolSequencer
 class_name ToggleSequencer
+# ToggleSequencer
+# A node that toggles a bool value at a set interval
 
 @export var starting_value: bool
-@export var time_between_toggles: float
+@export_range(0.0, Tools.EXPORT_RANGE_FLOAT_MAX) var time_between_toggles: float
 @export var auto_start: bool = false
 
-var current_value
-var timer
-var has_timer_started
-
+var current_value: bool
+var timer: Timer
+var has_timer_started = false
 
 func enable():
 	super.enable()
@@ -24,7 +25,7 @@ func _ready():
 	current_value = starting_value
 	
 	timer = Timer.new()
-	timer.connect("timeout", Callable(self, "_on_timeout"))
+	timer.timeout.connect(_on_timeout)
 	add_child(timer)
 	timer.wait_time = time_between_toggles
 	timer.one_shot = false
@@ -33,7 +34,7 @@ func _ready():
 	
 
 func _on_timeout():
-	emit_signal("new_value", current_value)
+	new_value.emit(current_value)
 	current_value = not current_value
 	
 	
@@ -48,7 +49,7 @@ func start() -> void:
 func start_with(first_value: bool) -> void:
 	current_value = first_value
 	start()
-	emit_signal("new_value", current_value)
+	new_value.emit(current_value)
 	
 	
 func stop() -> void:
@@ -61,7 +62,7 @@ func stop() -> void:
 	
 func stop_with(last_value: bool) -> void:
 	current_value = last_value
-	emit_signal("new_value", current_value)
+	new_value.emit(current_value)
 	stop()
 	
 	

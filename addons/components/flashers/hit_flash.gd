@@ -6,7 +6,7 @@ class_name HitFlasher
 @export_range(0, Tools.EXPORT_RANGE_FLOAT_MAX) var flash_duration: float
 @export var auto_start: bool
 
-@onready var flash_material = preload("res://addons/third_party/shaders/single_color_shader_material.tres")
+@onready var flash_material = preload("res://addons/_third_party/shaders/single_color_shader_material.tres")
 
 var timer: Timer
 var has_timer_started = false
@@ -54,7 +54,7 @@ func flash() -> void:
 		return
 		
 	target.material = flash_material
-	target.material.set("shader_param/color", flash_color)
+	target.material.set_shader_param("color", flash_color)
 	
 	
 func is_in_flash() -> bool:

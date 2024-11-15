@@ -6,7 +6,7 @@ var min_value: float = 0.0
 var max_value: float = 1.0
 var min_to_max_time: float = 1
 
-static func value(inital_pos: float, min_value: float, max_value: float, min_to_max_time: float, time: float) -> float:
+static func solve_for(inital_pos: float, min_value: float, max_value: float, min_to_max_time: float, time: float) -> float:
 	var instance = WaveCalculator.new()
 	instance.initial_value_position = inital_pos
 	instance.min_value = min_value
