@@ -1,51 +1,55 @@
 extends Node
 class_name Groups
-
-onready var types: Types = Types.new()
-onready var roots: Roots = Roots.new()
-onready var shapes: Shapes = Shapes.new()
-onready var hitboxes: Hitboxes = Hitboxes.new()
-onready var hurtboxes: Hurtboxes = Hurtboxes.new()
-onready var hotboxes: Hotboxes = Hotboxes.new()
+# Groups
+# This is the recommended hub for accessing group identifiers
+# so that nodes, areas and more are added to the appropriate groups
+# Usage will look like: Game.groups.category.specific_group
 
 
-class Types:
-	const entity = "group.type.entity"
-	const object = "group.type.object"
-	const environment = "group.type.environment"
+@onready var roots: Roots = Roots.new()
+@onready var hitboxes: Hitboxes = Hitboxes.new()
+@onready var hurtboxes: Hurtboxes = Hurtboxes.new()
+@onready var hotboxes: Hotboxes = Hotboxes.new()
 	
 
 class Roots:
+	# Use this class to store group ID's that will be set
+	# at the root of objects.
+	
+	# EXAMPLES
 	const player_character = "group.root.player_character"
-	const enemy = "group.root.enemy"
-#	const bullet = "group.root.bullet"
-#	const pickup = "group.root.pickup"
-	
-	
-class Shapes:
-	const player = "group.shape.player"
-	const enemy = "group.shape.enemy"
-#	const bullet = "group.shape.bullet"
-#	const wall = "group.shape.wall"
+	# const bullet = "group.root.bullet"
+	# const pickup = "group.root.pickup"
 	
 	
 class Hitboxes:
-#	const player_bullet = "group.hitbox.player.bullet"
-#	const player_teleport = "group.hitbox.player.teleport"
-#	const enemy_bullet = "group.hitbox.enemy.bullet"
+	# Use this class to store group ID's that will be set
+	# on hitboxes (Area2D's that deal damage) 
+	
+	# EXAMPLES:
+	# const player_bullet = "group.hitbox.player.bullet"
+	# const player_teleport = "group.hitbox.player.teleport"
+	# const enemy_bullet = "group.hitbox.enemy.bullet"
 	pass
 	
 	
 class Hurtboxes:
-#	const player = "group.hurtbox.player"
-#	const enemy = "group.hurtbox.enemy"
-#	const logo = "group.hitbox.logo"
-#	const shield = "group.hitbox.shield"
+	# Use this class to store group ID's that will be set
+	# on hurtboxes (Area2D's that receive damage) 
+	
+	# EXAMPLES
+	const player = "group.hurtbox.player"
+	# const player = "group.hurtbox.player"
+	# const enemy = "group.hurtbox.enemy"
+	# const shield = "group.hitbox.shield"
 	pass
 	
 	
 class Hotboxes:
-#	const player_pickup = "group.hotbox.player.pickup"
-#	const energy_pickup = "group.hotbox.energy.pickup"
-#	const enemy_fire_zone = "group.hotbox.enemy.fire.zone"
+	# Use this class to store group ID's that will be set
+	# on hotboxes (Area2D's that interact with other objects in the game) 
+	
+	# EXAMPLES:
+	# const player_pickups = "group.hotbox.player.pickups"
+	# const pickup = "group.hotbox.pickup"
 	pass

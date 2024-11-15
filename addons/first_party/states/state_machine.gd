@@ -6,18 +6,18 @@ extends Node
 # Emitted when transitioning to a new state.
 signal transitioned(state_name)
 
-export (Dictionary) var state_properties
+@export var state_properties: Dictionary
 
 # Path to the initial active state. We export it to be able to pick the initial state in the inspector.
-export var initial_state := NodePath()
+@export var initial_state := NodePath()
 
-export (bool) var enter_initial_state_on_ready = false
+@export var enter_initial_state_on_ready: bool = false
 
 # The current active state. At the start of the game, we get the `initial_state`.
-onready var state: State = get_node(initial_state)
+@onready var state: State = get_node(initial_state)
 
 func _ready() -> void:
-	yield(owner, "ready")
+	await owner.ready
 	# The state machine assigns itself to the State objects' state_machine property.
 	for child in get_children():
 		child.state_machine = self

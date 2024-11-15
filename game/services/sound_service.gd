@@ -21,7 +21,7 @@ var _sfx_volume = SFX_VOLUME_DEFAULT
 var _is_mute_enabled = MUTE_DEFAULT
 
 func on_game_initialize():
-	.on_game_initialize()
+	super.on_game_initialize()
 	set_mute_value(_is_mute_enabled)
 	
 

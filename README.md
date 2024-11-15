@@ -1,2 +1,6 @@
-# Split Trigger
-A twin-stick space shooter with a "shoot the orb" teleport mechanic 
+# Baja The Frog - Godot Starter Kit:
+	
+- TODO:
+	- remove explosion rings
+	- move juice press to its own repo
+	- move event bus to its own repo

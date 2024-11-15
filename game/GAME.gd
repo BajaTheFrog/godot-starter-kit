@@ -1,20 +1,22 @@
 extends Node
 # GAME
-# This is the anchor for all the game systems
+# This is the AUTOLOAD anchor for all the major game systems. 
 
-onready var groups: Groups = $groups
-onready var events: Events = $events
-onready var messages: Messages = $messages
+@export var groups: Groups
+@export var events: Events
+@export var messages: Messages
 
-onready var services = $services
-onready var theme_service: ThemeService = $services/theme_service
-onready var sound_service: SoundService = $services/sound_service
-onready var pause_service: PauseService = $services/pause_service
-onready var time_service: TimeService = $services/time_service
-onready var screen_service: ScreenService = $services/screen_service
-onready var camera_service: CameraService = $services/camera_service
-onready var world_service: WorldService = $services/world_service
-onready var player_service: PlayerService = $services/player_service
+@onready var services = $services
+@export var theme_service: ThemeService
+@export var sound_service: SoundService
+@export var pause_service: PauseService
+@export var time_service: TimeService
+@export var screen_service: ScreenService
+@export var camera_service: CameraService
+@export var world_service: WorldService
+@export var entity_service: EntityService
+@export var ui_service: UIPresentationService
+@export var context_service: ContextPresentationService
 
 var has_been_initialized = false
 
@@ -57,7 +59,7 @@ func initialize_services():
 		
 	has_been_initialized = true
 	
-		
+	
 func _process(delta):
 	if not has_been_initialized:
 		return
@@ -70,11 +72,7 @@ func _process(delta):
 			
 		service.on_game_process(delta)
 		
-	if Input.is_action_just_pressed("toggle_pause"):
-		pass
 		
-		
-	
 func _physics_process(delta):
 	if not has_been_initialized:
 		return

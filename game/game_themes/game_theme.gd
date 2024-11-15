@@ -1,8 +1,6 @@
-extends Node
+extends RefCounted
 class_name GameTheme
-	
-var background_color
-var midground_color
-var foreground_color
-var primary_color
-var accent_color
+
+@export var background_color: Color
+@export var primary_color: Color
+@export var accent_color: Color

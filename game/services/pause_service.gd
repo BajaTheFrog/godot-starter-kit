@@ -1,7 +1,7 @@
 extends GameService
 class_name PauseService
 
-export (float) var min_time_between_changes = 0.3
+@export_range(0.0, Tools.EXPORT_RANGE_FLOAT_MAX) var min_time_between_changes = 0.3
 var _time_since_last_request = 0
 
 
@@ -33,11 +33,11 @@ func pause_off():
 	_set_paused(false)
 	
 	
-func _set_paused(is_paused: bool):
+func _set_paused(paused_value: bool):
 	# squash "double presses" or inputs from multiple nodes
 	if _time_since_last_request < min_time_between_changes:
 		return
 
-	get_tree().paused = is_paused
-	Game.events.gameplay.emit_signal("pause_changed", is_paused)
+	get_tree().paused = paused_value
+	Game.events.application.pause_changed.emit(paused_value)
 	_time_since_last_request = 0

@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://examples/subjects/spawnable_dummy.gd" type="Script" id=1]
-[ext_resource path="res://addons/first_party/assets/basic_2d_assets/objects/heart/heart_filled.png" type="Texture" id=2]
-
-[node name="SpawnableDummy" type="Sprite"]
-modulate = Color( 1, 0.188235, 0.188235, 1 )
-texture = ExtResource( 2 )
-script = ExtResource( 1 )

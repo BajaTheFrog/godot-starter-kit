@@ -1,5 +1,5 @@
 extends GameService
-class_name PlayerService
+class_name EntityService
 
 
 func get_player_root_node() -> Node2D:
@@ -9,3 +9,5 @@ func get_player_root_node() -> Node2D:
 		return null
 	else:
 		return player_root_nodes[0]
+
+# EXAMPLES
