@@ -17,8 +17,6 @@ config/icon="res://defaults/icon.png"
 
 [autoload]
 
-EventBus="*res://addons/event_bus/event_bus.tscn"
-PresentationServices="*res://addons/presentation/presentation_services.tscn"
 Game="*res://game/game.tscn"
 
 [debug]
