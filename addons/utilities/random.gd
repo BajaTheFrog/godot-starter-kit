@@ -56,7 +56,7 @@ static func roll_chance_out_of_100(chance_out_of_100: float) -> bool:
 # So passing in 0.36 evaluates if you hit on a 36% chance
 static func roll_chance_with_percent(percent: float) -> bool:
 	var roll = randf_range(0.0, 1.0)
-	return roll < percent
+	return roll <= percent
 	
 
 # For calculating probabilties like a "2 in 7" chance
