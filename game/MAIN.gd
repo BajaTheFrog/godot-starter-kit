@@ -1,5 +1,4 @@
 extends Node
-class_name Main
 
 @export var context_root: Node
 @export var title_context_scene: PackedScene
