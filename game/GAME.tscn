@@ -1,73 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://1xy16bc22wio"]
+[gd_scene load_steps=4 format=3 uid="uid://dppy7c311a6pu"]
 
 [ext_resource type="Script" path="res://game/game.gd" id="1"]
-[ext_resource type="Script" path="res://game/services/world_service.gd" id="2"]
-[ext_resource type="Script" path="res://game/services/screen_service.gd" id="3"]
-[ext_resource type="Script" path="res://addons/presentation/ui/ui_presentation_service.gd" id="4"]
-[ext_resource type="Script" path="res://game/events/events.gd" id="5"]
-[ext_resource type="Script" path="res://game/services/entity_service.gd" id="6"]
-[ext_resource type="Script" path="res://game/services/time_service.gd" id="7"]
-[ext_resource type="Script" path="res://game/services/camera_service.gd" id="8"]
-[ext_resource type="Script" path="res://game/groups/groups.gd" id="9"]
-[ext_resource type="Script" path="res://game/services/pause_service.gd" id="10"]
-[ext_resource type="Script" path="res://game/services/sound_service.gd" id="11"]
-[ext_resource type="Script" path="res://game/messages/messages.gd" id="12"]
-[ext_resource type="Script" path="res://game/services/theme_service.gd" id="13"]
-[ext_resource type="Script" path="res://addons/presentation/contexts/context_service.gd" id="14"]
+[ext_resource type="PackedScene" uid="uid://x7q2pksiwc2j" path="res://game/contexts/title_context/title_context.tscn" id="2_u06uc"]
+[ext_resource type="PackedScene" uid="uid://dwuwvlxqvw3qo" path="res://game/contexts/gameplay_context/gameplay_context.tscn" id="3_lv2m4"]
 
-[node name="game" type="Node" node_paths=PackedStringArray("groups", "events", "messages", "theme_service", "sound_service", "pause_service", "time_service", "screen_service", "camera_service", "world_service", "entity_service", "ui_service", "context_service")]
+[node name="game" type="Node" node_paths=PackedStringArray("context_root")]
 script = ExtResource("1")
-groups = NodePath("groups")
-events = NodePath("events")
-messages = NodePath("messages")
-theme_service = NodePath("services/theme_service")
-sound_service = NodePath("services/sound_service")
-pause_service = NodePath("services/pause_service")
-time_service = NodePath("services/time_service")
-screen_service = NodePath("services/screen_service")
-camera_service = NodePath("services/camera_service")
-world_service = NodePath("services/world_service")
-entity_service = NodePath("services/entity_service")
-ui_service = NodePath("services/ui_service")
-context_service = NodePath("services/context_service")
+context_root = NodePath("context_root")
+title_context_scene = ExtResource("2_u06uc")
+gameplay_context_scene = ExtResource("3_lv2m4")
 
-[node name="groups" type="Node" parent="."]
-script = ExtResource("9")
-
-[node name="events" type="Node" parent="."]
-script = ExtResource("5")
-
-[node name="messages" type="Node" parent="."]
-script = ExtResource("12")
-
-[node name="services" type="Node" parent="."]
-
-[node name="theme_service" type="Node" parent="services"]
-script = ExtResource("13")
-
-[node name="sound_service" type="Node" parent="services"]
-script = ExtResource("11")
-
-[node name="pause_service" type="Node" parent="services"]
-script = ExtResource("10")
-
-[node name="time_service" type="Node" parent="services"]
-script = ExtResource("7")
-
-[node name="screen_service" type="Node" parent="services"]
-script = ExtResource("3")
-
-[node name="camera_service" type="Node" parent="services"]
-script = ExtResource("8")
-
-[node name="world_service" type="Node" parent="services"]
-script = ExtResource("2")
-
-[node name="entity_service" type="Node" parent="services"]
-script = ExtResource("6")
-
-[node name="ui_service" type="Node" parent="services"]
-script = ExtResource("4")
-
-[node name="context_service" type="Node" parent="services"]
-script = ExtResource("14")
+[node name="context_root" type="Node" parent="."]

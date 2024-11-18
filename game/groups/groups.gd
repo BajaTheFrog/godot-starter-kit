@@ -3,7 +3,7 @@ class_name Groups
 # Groups
 # This is the recommended hub for accessing group identifiers
 # so that nodes, areas and more are added to the appropriate groups
-# Usage will look like: Game.groups.category.specific_group
+# Usage will look like: Global.groups.category.specific_group
 
 
 @onready var roots: Roots = Roots.new()

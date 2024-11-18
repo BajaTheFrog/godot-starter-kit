@@ -39,5 +39,5 @@ func _set_paused(paused_value: bool):
 		return
 
 	get_tree().paused = paused_value
-	Game.events.application.pause_changed.emit(paused_value)
+	Global.events.application.pause_changed.emit(paused_value)
 	_time_since_last_request = 0

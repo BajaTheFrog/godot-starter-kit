@@ -9,4 +9,4 @@ func on_game_initialize():
 
 func set_current_theme(new_theme: GameTheme) -> void:
 	current_theme = new_theme
-	Game.events.game_theme.theme_changed.emit(new_theme)
+	Global.events.game_theme.theme_changed.emit(new_theme)

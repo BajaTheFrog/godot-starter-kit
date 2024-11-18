@@ -5,7 +5,7 @@ class_name Events
 # Some examples are included to demonstrate the pattern
 # Create a class that contains the events for _types_ events or _categories_
 # we might care about. 
-# Usage will look like: Game.events.category.specific_signal
+# Usage will look like: Global.events.category.specific_signal
 
 @onready var application: ApplicationEvents = ApplicationEvents.new()
 @onready var player: PlayerEvents = PlayerEvents.new()
@@ -20,6 +20,7 @@ class ApplicationEvents:
 	# the specific game rules or gameplay loop
 	
 	# EXAMPLES
+	signal game_is_ready()
 	signal pause_changed(is_paused)
 	pass
 	
